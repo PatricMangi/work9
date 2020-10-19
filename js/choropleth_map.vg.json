@@ -15,22 +15,22 @@
           "url": "https://raw.githubusercontent.com/PatricMangi/work9/main/data/WorldCups.csv"
         },
         "key": "Country",
-        "fields": ["Active"]
+        "fields": ["Attendance"]
       }
     },
-    {"calculate": "datum.Active + 0.1", "as": "Active Cases"}
+    {"calculate": "datum.Active + 0.1", "as": "Attendance"}
   ],
   "projection": {"type": "equirectangular"},
   "mark": {"type": "geoshape"},
   "encoding": {
     "color": {
-      "field": "Active Cases",
+      "field": "Attendance",
       "type": "quantitative",
       "scale": {"type": "log"}
     },
     "tooltip": [
       {"field": "properties.NAME", "type": "nominal", "title": "Country"},
-      {"field": "Active", "type": "quantitative"}
+      {"field": "Attendance", "type": "quantitative"}
     ]
   },
   "config": {}
