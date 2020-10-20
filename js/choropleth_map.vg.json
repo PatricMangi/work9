@@ -4,37 +4,28 @@
   "width": 800,
   "height": 600,
   "data": {
-    "url": "https://raw.githubusercontent.com/PatricMangi/work9/main/js/custom.geo%20(1)%20(1).json",
-    "format": {
-          "type": "topojson",
-          "feature": "custom.geo%20(1)%20(1)"
-        }
+    "url": "https://raw.githubusercontent.com/PatricMangi/work9/main/js/custom.geo%20(1)%20(1).topojson",
+    "format": {"type": "topojson", "feature": "custom.geo%20(1)%20(1)"}
   },
-  "transform": [{
+  "transform": [
+    {
       "lookup": "properties.NAME",
       "from": {
         "data": {
           "url": "https://raw.githubusercontent.com/PatricMangi/work9/main/data/WorldCups.csv"
         },
         "key": "Country",
-        "fields": ["MatchesPlayed"]
+        "fields": ["GoalsScored"]
       }
     }
   ],
-  "projection": {
-    "type": "albersUsa"
-  },
-
+  "projection": {"type": "albersUsa"},
   "mark": {"type": "geoshape"},
   "encoding": {
     "color": {
-      "field": "MatchesPlayed",
+      "field": "GoalsScored",
       "type": "quantitative",
-      "scale": {
-         "domain": [0, 70]
-    }
+      "scale": {"domain": [0, 200]}
     }
   }
-  
-
 }
